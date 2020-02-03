@@ -1,0 +1,23 @@
+.flex {
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+}
+
+.info {
+    padding: 10px;
+}
+
+@media (max-width: 375px) {
+    .flex {
+        display: flex;
+        justify-content: center;
+        margin: 30px;
+        flex-direction: column;
+    }
+}
+
+img {
+    width: 286px;
+    height: 180px;
+}

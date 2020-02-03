@@ -1,0 +1,16 @@
+<div class="flex title-alignment">
+    <h4 class="title">PROCURE SEU PERFIL</h4>
+</div>
+<div class="flex content">
+    <form [formGroup]="userProfile">
+        <div class="form-group">
+            <input type="text" formControlName="tag" class="form-control" aria-describedby="tagHelp" placeholder="TAG #XXXXXX">
+            <small id="tagHelp" class="form-text text-muted">Nunca vamos compartilhar sua tag, com ninguém.</small>
+        </div>
+        <button (click)="searchUser()">Buscar</button>
+    </form>
+</div>
+<div class="user">
+    <div class="user-image"></div>
+    <div class="user-data"></div>
+</div>
