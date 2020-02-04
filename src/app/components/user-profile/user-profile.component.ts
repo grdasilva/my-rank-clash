@@ -20,7 +20,14 @@ export class UserProfileComponent implements OnInit {
   }
 
   searchUser() {
-    this.userService.getPlayerByTag(this.userProfile.value.tag).subscribe(user => (this.user = user));
-    console.log(this.user)
+    this.userService.getPlayerByTag(this.userProfile.value.tag).subscribe(
+      result =>{
+        console.log(result);
+        this.user = result;
+      }, 
+      err => {
+        console.log(err);
+      }
+    );
   }
 }

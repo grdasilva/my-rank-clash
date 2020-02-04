@@ -4,10 +4,17 @@
 <div class="flex content">
     <form [formGroup]="userProfile">
         <div class="form-group">
-            <input type="text" formControlName="tag" class="form-control" aria-describedby="tagHelp" placeholder="TAG #XXXXXX">
+            <input type="text" formControlName="tag" class="form-control" aria-describedby="tagHelp"
+                placeholder="TAG #XXXXXX">
             <small id="tagHelp" class="form-text text-muted">Nunca vamos compartilhar sua tag, com ninguém.</small>
         </div>
-        <button (click)="searchUser()">Buscar</button>
+        <div class="wrapper">
+            <button class="button" (click)="searchUser()">
+                <div class="button__inner">
+                    BUSCAR
+                </div>
+            </button>
+        </div>
     </form>
 </div>
 <div class="user">
