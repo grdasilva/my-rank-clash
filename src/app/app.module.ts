@@ -7,12 +7,16 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ClanProfileComponent } from './components/clan-profile/clan-profile.component';
+import { BestPlayersDecksComponent } from './components/best-players-decks/best-players-decks.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ClanProfileComponent,
+    BestPlayersDecksComponent
   ],
   imports: [
     BrowserModule,
