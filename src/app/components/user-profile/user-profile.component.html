@@ -1,11 +1,13 @@
 <div class="flex title-alignment">
-    <h4 class="title">PROCURE SEU PERFIL</h4>
+    <h4 class="title">
+        <section *ngIf="!user">PROCURE</section> SEU PERFIL
+    </h4>
 </div>
-<div class="flex content">
+<div class="flex content" *ngIf="!user">
     <form [formGroup]="userProfile">
         <div class="form-group">
             <input type="text" formControlName="tag" class="form-control" aria-describedby="tagHelp"
-                placeholder="TAG #XXXXXX">
+                placeholder="TAG #XXXXXX" value="{{userProfile.tag}}">
             <small id="tagHelp" class="form-text text-muted">Nunca vamos compartilhar sua tag, com ninguém.</small>
         </div>
         <div class="wrapper">
@@ -17,7 +19,94 @@
         </div>
     </form>
 </div>
-<div class="user">
-    <div class="user-image"></div>
-    <div class="user-data"></div>
+
+<div *ngIf="user">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#perfil" role="tab" aria-controls="home"
+                aria-selected="true">Perfil</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#stats" role="tab" aria-controls="profile"
+                aria-selected="false">Stats</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#batalhas" role="tab" aria-controls="contact"
+                aria-selected="false">Batalhas</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#decks" role="tab" aria-controls="contact"
+                aria-selected="false">Decks</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="perfil" role="tabpanel" aria-labelledby="home-tab">
+            <div class="card">
+                <div class="row no-gutters">
+                    <div class="col-md-2">
+                        <img src="{{user.currentFavouriteCard.iconUrls.medium}}" class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-10">
+                        <div class="card-body">
+                            <h5 class="card-title">{{user.name}}<span
+                                    class="badge badge-primary level">{{user.expLevel}}</span></h5>
+                            <p class="card-text"><b>Arena: </b> {{user.arena.name}}</p>
+                            <p class="card-text"><b>Clan: </b> {{user.clan.name}}</p>
+                            <p class="card-text"><b>Deck Atual: </b></p>
+                            <div class="flex deck">
+                                <div *ngFor="let image of user.currentDeck">
+                                    <img src="{{image.iconUrls.medium}}">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="stats" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <div class="align-symbol">
+                        <img src="https://cdn.statsroyale.com/images/trophy.png"
+                            style="height: 20px; margin-right: 5px;">
+                        <h6 class="card-title">Troféus</h6>
+                    </div>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                    <div class="align-symbol">
+                        <img src="https://cdn.statsroyale.com/images/battle.png"
+                            style="height: 20px; margin-right: 5px;">
+                        <h6 class="card-title">Batalhas</h6>
+                    </div>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                    <div class="align-symbol">
+                        <img src="https://cdn.statsroyale.com/images/challenges.png"
+                            style="height: 20px; margin-right: 5px;">
+                        <h6 class="card-title">Desafios</h6>
+                    </div>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                    <h6 class="card-title">Próximos baús</h6>
+                    <div class="flex chest">
+                        <div *ngFor="let chest of upcomingChests">
+                            <span class="badge badge-primary level">{{chest.index}}</span>
+                            <img src="{{chest.image}}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="batalhas" role="tabpanel" aria-labelledby="contact-tab">...</div>
+        <div class="tab-pane fade" id="decks" role="tabpanel" aria-labelledby="contact-tab">...</div>
+    </div>
+</div>
+<div class="flex content" *ngIf="user">
+    <div class="wrapper">
+        <button class="button" (click)="newSearch()">
+            <div class="button__inner">
+                NOVA BUSCA
+            </div>
+        </button>
+    </div>
 </div>

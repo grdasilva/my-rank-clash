@@ -15,7 +15,7 @@ export class UserProfileService {
 
     constructor(private http: HttpClient) { }
 
-    public getPlayerByTag(tag: string): Observable<any> {
+    public getClanByTag(tag: string): Observable<any> {
         tag = tag.replace(/#/g, '%23');
         const httpOption = {
             headers: new HttpHeaders({
@@ -24,30 +24,6 @@ export class UserProfileService {
                 'Access-Control-Allow-Origin': '*' 
             })
         };
-        return this.http.get('/api/players/' + tag, httpOption);
-    }
-
-    public getUpcomingChestsOfPlayerByTag(tag: string): Observable<any> {
-        tag = tag.replace(/#/g, '%23');
-        const httpOption = {
-            headers: new HttpHeaders({
-                'Content-Type': 'application/json',
-                'Authorization': authToken,
-                'Access-Control-Allow-Origin': '*' 
-            })
-        };
-        return this.http.get('/api/players/' + tag + "/upcomingchests", httpOption);
-    }
-
-    public getBattleLogOfPlayerByTag(tag: string): Observable<any> {
-        tag = tag.replace(/#/g, '%23');
-        const httpOption = {
-            headers: new HttpHeaders({
-                'Content-Type': 'application/json',
-                'Authorization': authToken,
-                'Access-Control-Allow-Origin': '*' 
-            })
-        };
-        return this.http.get('/api/players/' + tag + "/battlelog", httpOption);
+        return this.http.get('/api/clan/' + tag, httpOption);
     }
 }

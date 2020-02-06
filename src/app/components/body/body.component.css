@@ -17,7 +17,11 @@
     }
 }
 
-img {
+.flex img {
     width: 286px;
     height: 180px;
+}
+
+.images {
+    height: 700px;
 }

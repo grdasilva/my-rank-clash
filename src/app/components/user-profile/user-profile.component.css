@@ -86,3 +86,47 @@ h1, h2, h3, h4 {
     background: rgba(255, 255, 255, 0.35);
     z-index: 3;
 }
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.no-gutters img {
+    width: 200px;
+    height: 220px;
+    padding:10px;
+    justify-content: center;
+    align-content: center;
+}
+
+.level {
+    margin-left: 5px;
+}
+
+.deck {
+    flex-direction: row;
+}
+
+.deck img {
+    width: 70px;
+    height: 80px;
+    margin: 0;
+    padding: 0;
+}
+
+.chest {
+    flex-direction: row;
+}
+
+.chest img {
+    width: 50px;
+    height: 50px;
+    margin-left: 15px;
+    padding: 0;
+}
+
+.align-symbol {
+    display: flex;
+}

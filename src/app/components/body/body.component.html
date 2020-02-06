@@ -1,32 +1,48 @@
-<div class="jumbotron jumbotron-fluid">
-    <div class="container">
-        <h1 class="display-4">Pass Royale Temporada 8</h1>
-        <div class="info">
-            <h5>O QUE É O PASS ROYALE?</h5>
-            <p class="lead">
-                O Pass Royale libera recompensas e vantagens únicas durante a temporada! 
-                Consiga coroas para liberar baús da coroa, patamares de recompensas da temporada 8 do 
-                Pass Royale e ouro da caixa-forte!
-            </p>
+<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active" data-interval="3000">
+            <img src="./../../../assets//imgs/carousel-1.jpg" class="d-block w-100 images" alt="...">
+            <!-- <div class="carousel-caption d-none d-md-block">
+                <h5>First slide label</h5>
+                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            </div> -->
         </div>
-        <div class="info">
-            <h5>VANTAGENS DO PASS ROYALE</h5>
-            <ul>
-                <li>Tentativas ilimitadas nos desafios especiais</li>
-                <li>Desbloqueio automático de baús (coloque o próximo baú na fila de desbloqueio!)</li>
-                <li>Raios em todos os baús da coroa e do Pass Royale</li>
-                <li>Um nome dourado exclusivo</li>
-                <li>Presentes para os colegas de clã</li>
-            </ul>
+        <div class="carousel-item" data-interval="3000">
+            <img src="./../../../assets//imgs/carousel-2.jpg" class="d-block w-100 images" alt="...">
+            <!-- <div class="carousel-caption d-none d-md-block">
+                <h5>Second slide label</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div> -->
+        </div>
+        <div class="carousel-item" data-interval="3000">
+            <img src="./../../../assets//imgs/carousel-3.jpg" class="d-block w-100 images" alt="...">
+            <!-- <div class="carousel-caption d-none d-md-block">
+                <h5>Third slide label</h5>
+                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            </div> -->
         </div>
     </div>
+    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
 </div>
 <div class="flex">
     <div class="card" style="width: 18rem; margin:5px;">
         <img class="card-img-top" src="../../../assets/imgs/first-image.jpg" alt="Imagem de capa do card">
         <div class="card-body">
             <h5 class="card-title">Suas stats</h5>
-            <p class="card-text">Verifique aqui os seus dados relacionados ao jogo, como: partidas, vitórias, derrotas, coroas e recordes</p>
+            <p class="card-text">Verifique aqui os seus dados relacionados ao jogo, como: partidas, vitórias, derrotas,
+                coroas e recordes</p>
             <button (click)="direcionarTela('userProfile')" class="btn btn-primary">Visitar</button>
         </div>
     </div>
